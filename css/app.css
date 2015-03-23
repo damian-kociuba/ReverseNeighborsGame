@@ -1,23 +1,47 @@
 .board {
     margin:auto;
+    margin-top:10px;
     display: table;
     border-right: 1px black solid;
     border-bottom: 1px black solid;
-}
 
+}
+@media screen and (max-width: 300px) {
+    .board {
+        overflow: scroll;
+        width:211px;
+
+    }
+}
 .board-row {
+    width:100%;
     margin:0px;
     padding:0px;
     line-height: 0px;
 }
-.border-field-container {
+.board-field-container {
+    width: 40px;
+    height: 40px;
     border-top:1px black solid;
     border-left:1px black solid;
     display: inline-block;
 }
+@media screen and (max-width: 440px) {
+    .board-field-container {
+        width:26px;
+        height:26px;
+    }
+}
+@media screen and (max-width: 300px) {
+    .board-field-container {
+        width:21px;
+        height:21px;
+    }
+}
+
 .board-field {
-    width: 40px;
-    height: 40px;
+    width:100%;
+    height:100%;
     margin: 0px;
     position:relative;
     cursor:pointer;
@@ -26,7 +50,7 @@
 }
 
 .board-field.white {
-    
+
     transform:rotateY(180deg);
 }
 .board-field.black {
@@ -42,7 +66,7 @@
 .board-field-layel-white {
     background-color: #bebdbc;
     transform:rotateY(180deg);
-    
+
 }
 .board-field-layel-black {
     background-color: #444444;
@@ -56,13 +80,28 @@
     left:0px;
     position: fixed;
     background-color: rgba(100,100,100,0.5);
+    z-index:9999;
+}
+@media screen and (max-width: 440px) {
+    .fixed-message-container{
+        padding: 20px;
+    }
 }
 .fixed-message-content {
     padding: 50px;
-    width:500px;;
+    width:500px;
     margin:auto;
     background-color: #d7d7d7;
     border-radius:5px;
     border:2px #4b4f54 solid;
     box-shadow: 10px 10px 23px -7px rgba(0,0,0,0.75);
+}
+
+@media screen and (max-width: 440px) {
+    .fixed-message-content {
+        padding: 10px;
+        width: 100%;
+        margin:auto;
+        font-size:20px;
+    }
 }
