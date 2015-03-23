@@ -19,7 +19,7 @@
         <div class="container" >
             <h1>Reverse Neighbors Game</h1>
             <p class="lead">Make all fields in one color!</p>
-            
+
             <button class="btn btn-success" ng-click="restart()">New game</button>
             <hr>
             Moves: <span class="badge">{{movesNumber}}</span> 
@@ -27,11 +27,15 @@
             White: <span class="badge">{{whiteCounter}}</span>
             <div class="board">
                 <div class="board-row" ng-repeat="row in board">
-                    <div class="board-field" ng-repeat="field in row" ng-class="{'white':field.type === 0, 'black':field.type === 1}" ng-click="boardClick($parent.$index, $index)">
+                    <div class="border-field-container" ng-repeat="field in row">
+                        <div class="board-field" ng-class="{'white':field.type === 0, 'black':field.type === 1}" ng-click="boardClick($parent.$index, $index)">
+                            <div class="board-field-layel-white"></div>
+                            <div class="board-field-layel-black"></div>
+                        </div>
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </body>
 </html>

@@ -1,8 +1,8 @@
 .board {
     margin:auto;
     display: table;
-    border-top:1px black solid;
-    border-left:1px black solid;
+    border-right: 1px black solid;
+    border-bottom: 1px black solid;
 }
 
 .board-row {
@@ -10,21 +10,42 @@
     padding:0px;
     line-height: 0px;
 }
-.board-field {
+.border-field-container {
+    border-top:1px black solid;
+    border-left:1px black solid;
     display: inline-block;
+}
+.board-field {
     width: 40px;
     height: 40px;
     margin: 0px;
-    border-right:1px black solid;
-    border-bottom:1px black solid;
+    position:relative;
     cursor:pointer;
+    transform-style:preserve-3d;
+    transition: 1s;
 }
 
 .board-field.white {
-    background-color: #e8e8e8;
+    
+    transform:rotateY(180deg);
 }
 .board-field.black {
-    background-color: gray;
+}
+.board-field-layel-white, .board-field-layel-black {
+    position:absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+}
+.board-field-layel-white {
+    background-color: #bebdbc;
+    transform:rotateY(180deg);
+    
+}
+.board-field-layel-black {
+    background-color: #444444;
 }
 
 .fixed-message-container {
